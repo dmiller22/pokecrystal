@@ -225,12 +225,12 @@ ChikoritaPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	spriteface ELMSLAB_ELM, DOWN
 	refreshscreen $0
-	pokepic CHIKORITA
-	cry CHIKORITA
+	pokepic MEW
+	cry MEW
 	waitbutton
 	closepokepic
 	opentext
-	writetext TakeChikoritaText
+	writetext TakeMewText
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL3
@@ -238,14 +238,14 @@ ChikoritaPokeBallScript:
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
-	pokenamemem CHIKORITA, $0
+	pokenamemem MEW, $0
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke CHIKORITA, 5, BERRY
+	givepoke MEW, 5, BERRY
 	closetext
-	applymovement PLAYER, AfterChikoritaMovement
+	applymovement PLAYER, AfterMewMovement
 	jump ElmDirectionsScript
 
 DidntChooseStarterScript:
@@ -722,7 +722,7 @@ AfterTotodileMovement:
 	turn_head_up
 	step_end
 
-AfterChikoritaMovement:
+AfterMewMovement:
 	step_left
 	step_left
 	step_left
@@ -875,10 +875,10 @@ TakeTotodileText:
 	cont "water #MON?"
 	done
 
-TakeChikoritaText:
+TakeMewText:
 	text "ELM: So, you like"
-	line "CHIKORITA, the"
-	cont "grass #MON?"
+	line "Mew, the"
+	cont "psychic #MON?"
 	done
 
 DidntChooseStarterText:
