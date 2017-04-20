@@ -288,7 +288,7 @@ Rival1Group:
 	db 0 ; normal
 
 	; party
-	db 5, CHIKORITA
+	db 5, BULBASAUR
 
 	db $ff ; end
 
@@ -299,7 +299,7 @@ Rival1Group:
 	db 0 ; normal
 
 	; party
-	db 5, CYNDAQUIL
+	db 5, CHARMANDER
 
 	db $ff ; end
 
@@ -310,7 +310,7 @@ Rival1Group:
 	db 0 ; normal
 
 	; party
-	db 5, TOTODILE
+	db 5, SQUIRTLE
 
 	db $ff ; end
 
@@ -323,7 +323,7 @@ Rival1Group:
 	; party
 	db 12, GASTLY
 	db 14, ZUBAT
-	db 16, BAYLEEF
+	db 16, IVYSAUR
 
 	db $ff ; end
 
@@ -336,7 +336,7 @@ Rival1Group:
 	; party
 	db 12, GASTLY
 	db 14, ZUBAT
-	db 16, QUILAVA
+	db 16, CHARMELEON
 
 	db $ff ; end
 
@@ -349,7 +349,7 @@ Rival1Group:
 	; party
 	db 12, GASTLY
 	db 14, ZUBAT
-	db 16, CROCONAW
+	db 16, WARTORTLE
 
 	db $ff ; end
 
@@ -379,9 +379,9 @@ Rival1Group:
 		db BITE
 		db CONFUSE_RAY
 
-	db 22, BAYLEEF
+	db 22, IVYSAUR
 		db GROWL
-		db REFLECT
+		db TACKLE
 		db RAZOR_LEAF
 		db POISONPOWDER
 
@@ -413,11 +413,11 @@ Rival1Group:
 		db BITE
 		db CONFUSE_RAY
 
-	db 22, QUILAVA
-		db LEER
+	db 22, CHARMELEON
+		db SCRATCH
 		db SMOKESCREEN
 		db EMBER
-		db QUICK_ATTACK
+		db RAGE
 
 	db $ff ; end
 
@@ -447,9 +447,9 @@ Rival1Group:
 		db BITE
 		db CONFUSE_RAY
 
-	db 22, CROCONAW
-		db LEER
-		db RAGE
+	db 22, WARTORTLE
+		db TAIL_WHIP
+		db BUBBLE
 		db WATER_GUN
 		db BITE
 
@@ -487,8 +487,8 @@ Rival1Group:
 		db SCREECH
 		db FAINT_ATTACK
 
-	db 32, MEGANIUM
-		db REFLECT
+	db 32, VENUSAUR
+		db TACKLE
 		db RAZOR_LEAF
 		db POISONPOWDER
 		db BODY_SLAM
@@ -527,11 +527,11 @@ Rival1Group:
 		db SCREECH
 		db FAINT_ATTACK
 
-	db 32, QUILAVA
+	db 32, CHARMELEON
+		db SLASH
 		db SMOKESCREEN
 		db EMBER
-		db QUICK_ATTACK
-		db FLAME_WHEEL
+		db RAGE
 
 	db $ff ; end
 
@@ -567,11 +567,11 @@ Rival1Group:
 		db SCREECH
 		db FAINT_ATTACK
 
-	db 32, FERALIGATR
-		db RAGE
+	db 32, WARTORTLE
+		db BUBBLE
 		db WATER_GUN
 		db BITE
-		db SCARY_FACE
+		db RAPID_SPIN
 
 	db $ff ; end
 
@@ -613,8 +613,8 @@ Rival1Group:
 		db RECOVER
 		db FUTURE_SIGHT
 
-	db 38, MEGANIUM
-		db REFLECT
+	db 38, VENUSAUR
+		db TACKLE
 		db RAZOR_LEAF
 		db POISONPOWDER
 		db BODY_SLAM
@@ -659,11 +659,11 @@ Rival1Group:
 		db RECOVER
 		db FUTURE_SIGHT
 
-	db 38, TYPHLOSION
-		db SMOKESCREEN
+	db 38, CHARIZARD
+		db WING_ATTACK
 		db EMBER
-		db QUICK_ATTACK
-		db FLAME_WHEEL
+		db RAGE
+		db FLAMETHROWER
 
 	db $ff ; end
 
@@ -705,11 +705,11 @@ Rival1Group:
 		db RECOVER
 		db FUTURE_SIGHT
 
-	db 38, FERALIGATR
-		db RAGE
+	db 38, BLASTOISE
+		db HYDRO_PUMP
 		db WATER_GUN
-		db SCARY_FACE
-		db SLASH
+		db BITE
+		db RAPID_SPIN
 
 	db $ff ; end
 

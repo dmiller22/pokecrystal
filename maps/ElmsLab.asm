@@ -162,17 +162,17 @@ LabTryToLeaveScript:
 	applymovement PLAYER, MovementData_0x78f70
 	end
 
-CyndaquilPokeBallScript:
+CharmanderPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	spriteface ELMSLAB_ELM, DOWN
 	refreshscreen $0
-	pokepic CYNDAQUIL
-	cry CYNDAQUIL
+	pokepic CHARMANDER
+	cry CHARMANDER
 	waitbutton
 	closepokepic
 	opentext
-	writetext TakeCyndaquilText
+	writetext TakeCharmanderText
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL1
@@ -180,29 +180,29 @@ CyndaquilPokeBallScript:
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
-	pokenamemem CYNDAQUIL, $0
+	pokenamemem CHARMANDER, $0
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke CYNDAQUIL, 5, BERRY
+	givepoke CHARMANDER, 5
 	closetext
 	checkcode VAR_FACING
 	if_equal RIGHT, ElmDirectionsScript
-	applymovement PLAYER, AfterCyndaquilMovement
+	applymovement PLAYER, AfterCharmanderMovement
 	jump ElmDirectionsScript
 
-TotodilePokeBallScript:
+SquirtlePokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	spriteface ELMSLAB_ELM, DOWN
 	refreshscreen $0
-	pokepic TOTODILE
-	cry TOTODILE
+	pokepic SQUIRTLE
+	cry SQUIRTLE
 	waitbutton
 	closepokepic
 	opentext
-	writetext TakeTotodileText
+	writetext TakeSquirtleText
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL2
@@ -210,27 +210,27 @@ TotodilePokeBallScript:
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
-	pokenamemem TOTODILE, $0
+	pokenamemem SQUIRTLE, $0
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke TOTODILE, 5, BERRY
+	givepoke SQUIRTLE, 5, BERRY
 	closetext
-	applymovement PLAYER, AfterTotodileMovement
+	applymovement PLAYER, AfterSquirtleMovement
 	jump ElmDirectionsScript
 
-ChikoritaPokeBallScript:
+BulbasaurPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	spriteface ELMSLAB_ELM, DOWN
 	refreshscreen $0
-	pokepic MEW
-	cry MEW
+	pokepic BULBASAUR
+	cry BULBASAUR
 	waitbutton
 	closepokepic
 	opentext
-	writetext TakeMewText
+	writetext TakeBulbasaurText
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL3
@@ -238,14 +238,14 @@ ChikoritaPokeBallScript:
 	writetext ChoseStarterText
 	buttonsound
 	waitsfx
-	pokenamemem MEW, $0
+	pokenamemem BULBASAUR, $0
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	buttonsound
-	givepoke MEW, 5, BERRY
+	givepoke BULBASAUR, 5, BERRY
 	closetext
-	applymovement PLAYER, AfterMewMovement
+	applymovement PLAYER, AfterBulbasaurMovement
 	jump ElmDirectionsScript
 
 DidntChooseStarterScript:
@@ -483,8 +483,11 @@ AideScript_GivePotions:
 	verbosegiveitem POTION
 	writetext AideText_AlwaysBusy
 	waitbutton
-	closetext
 	dotrigger $2
+	;pokenamemem PIKACHU, $0
+	;playsound SFX_CAUGHT_MON
+	;givepoke PIKACHU, 25
+	closetext
 	end
 
 AideScript_WalkBalls1:
@@ -709,20 +712,20 @@ ElmsLab_ElmToDefaultPositionMovement2:
 	turn_head_down
 	step_end
 
-AfterCyndaquilMovement:
+AfterCharmanderMovement:
 	step_left
 	step_up
 	turn_head_up
 	step_end
 
-AfterTotodileMovement:
+AfterSquirtleMovement:
 	step_left
 	step_left
 	step_up
 	turn_head_up
 	step_end
 
-AfterMewMovement:
+AfterBulbasaurMovement:
 	step_left
 	step_left
 	step_left
@@ -863,22 +866,22 @@ LabWhereGoingText:
 	line "are you going?"
 	done
 
-TakeCyndaquilText:
+TakeCharmanderText:
 	text "ELM: You'll take"
-	line "CYNDAQUIL, the"
-	cont "fire #MON?"
+	line "CHARMANDER, the"
+	cont "Fire #MON?"
 	done
 
-TakeTotodileText:
+TakeSquirtleText:
 	text "ELM: Do you want"
-	line "TOTODILE, the"
+	line "SQUIRTLE, the"
 	cont "water #MON?"
 	done
 
-TakeMewText:
+TakeBulbasaurText:
 	text "ELM: So, you like"
-	line "Mew, the"
-	cont "psychic #MON?"
+	line "BULBASAUR, the"
+	cont "grass #MON?"
 	done
 
 DidntChooseStarterText:
@@ -1418,7 +1421,7 @@ ElmsLab_MapEventHeader:
 	db 6
 	person_event SPRITE_ELM, 2, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ProfElmScript, -1
 	person_event SPRITE_SCIENTIST, 9, 2, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
-	person_event SPRITE_POKE_BALL, 3, 6, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
-	person_event SPRITE_POKE_BALL, 3, 7, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
-	person_event SPRITE_POKE_BALL, 3, 8, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	person_event SPRITE_POKE_BALL, 3, 6, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, CharmanderPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	person_event SPRITE_POKE_BALL, 3, 7, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SquirtlePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+	person_event SPRITE_POKE_BALL, 3, 8, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, BulbasaurPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	person_event SPRITE_OFFICER, 3, 5, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB
